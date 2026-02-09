@@ -1,0 +1,9 @@
+{
+  "name": "valentine-day-love-andrey",
+  "version": "1.0.0",
+  "description": "Романтический сайт для 14 февраля - Любовь & Андрей",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  }
+}

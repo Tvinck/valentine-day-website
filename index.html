@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 С Днём Святого Валентина!</title>
+    <meta name="description" content="Романтическое поздравление с Днём Святого Валентина для Любовь и Андрей">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💕</text></svg>">
+</head>
+
+<body>
+    <!-- Свечение на фоне -->
+    <div class="bg-glow"></div>
+
+    <!-- Фоновые анимации -->
+    <div class="background-animations">
+        <div class="hearts-container" id="heartsContainer"></div>
+        <div class="sparkles-container" id="sparklesContainer"></div>
+        <div class="petals-container" id="petalsContainer"></div>
+    </div>
+
+    <!-- Главный контент -->
+    <main class="main-content">
+        <!-- Экран приветствия -->
+        <section class="welcome-screen" id="welcomeScreen">
+            <div class="date-badge">
+                <span class="date-number">14</span>
+                <span class="date-month">февраля</span>
+                <div class="badge-shine"></div>
+            </div>
+
+            <h1 class="main-title">
+                <span class="title-line">С Днём</span>
+                <span class="title-line accent">Святого Валентина</span>
+            </h1>
+
+            <div class="names-container">
+                <span class="name name-left">Любовь</span>
+                <div class="heart-icon">
+                    <!-- Исправленное полное сердце -->
+                    <svg viewBox="0 0 100 100" class="heart-svg pulse">
+                        <defs>
+                            <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#FF6B9D" />
+                                <stop offset="50%" stop-color="#FF4081" />
+                                <stop offset="100%" stop-color="#C44569" />
+                            </linearGradient>
+                            <filter id="heartGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur" />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                            <filter id="heartShadow">
+                                <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#C44569"
+                                    flood-opacity="0.5" />
+                            </filter>
+                        </defs>
+                        <path
+                            d="M50 88 C20 65 5 45 5 30 C5 15 17 5 32 5 C42 5 48 12 50 18 C52 12 58 5 68 5 C83 5 95 15 95 30 C95 45 80 65 50 88 Z"
+                            fill="url(#heartGradient)" filter="url(#heartShadow)" />
+                        <!-- Блик на сердце -->
+                        <ellipse cx="35" cy="25" rx="12" ry="8" fill="rgba(255,255,255,0.3)"
+                            transform="rotate(-30 35 25)" />
+                    </svg>
+                </div>
+                <span class="name name-right">Андрей</span>
+            </div>
+
+            <p class="subtitle">✨ Нажми на печенье, чтобы открыть сюрприз ✨</p>
+
+            <!-- 3D Печенье с предсказанием -->
+            <div class="fortune-cookie-container" id="fortuneCookie">
+                <div class="fortune-cookie-3d">
+                    <!-- Левая половина печенья -->
+                    <div class="cookie-half cookie-left">
+                        <div class="cookie-surface">
+                            <div class="cookie-highlight"></div>
+                            <div class="cookie-shadow"></div>
+                            <div class="cookie-texture"></div>
+                        </div>
+                    </div>
+                    <!-- Правая половина печенья -->
+                    <div class="cookie-half cookie-right">
+                        <div class="cookie-surface">
+                            <div class="cookie-highlight"></div>
+                            <div class="cookie-shadow"></div>
+                            <div class="cookie-texture"></div>
+                        </div>
+                    </div>
+                    <!-- Бумажка с предсказанием -->
+                    <div class="fortune-paper">
+                        <div class="paper-content">
+                            <span>💕</span>
+                            <p>Ваша любовь —<br>это волшебство!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cookie-glow"></div>
+                <!-- Золотые частицы вокруг -->
+                <div class="cookie-sparkles">
+                    <span class="sparkle-dot">✨</span>
+                    <span class="sparkle-dot">✨</span>
+                    <span class="sparkle-dot">✨</span>
+                    <span class="sparkle-dot">✨</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Экран с открыткой и плеером -->
+        <section class="message-screen hidden" id="messageScreen">
+            <div class="envelope-container" id="envelope">
+                <div class="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="letter">
+                            <div class="letter-content">
+                                <div class="letter-decoration">💕</div>
+                                <p class="letter-greeting">Дорогие Любовь и Андрей!</p>
+                                <p class="letter-text">
+                                    Пусть ваши сердца бьются в унисон,
+                                    как эта прекрасная мелодия. Любовь —
+                                    это не просто слово, это ваша история,
+                                    написанная нежными взглядами и тёплыми объятиями.
+                                </p>
+                                <p class="letter-text">
+                                    Вы нашли друг друга среди миллионов людей —
+                                    и это настоящее чудо. Берегите это счастье,
+                                    и пусть каждый день вместе будет наполнен
+                                    любовью, смехом и волшебством!
+                                </p>
+                                <p class="letter-signature">С любовью, 14 февраля 💕</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Красивый плеер -->
+            <div class="player-container" id="playerContainer">
+                <div class="player-glow"></div>
+                <div class="player">
+                    <div class="vinyl-container">
+                        <div class="vinyl" id="vinyl">
+                            <div class="vinyl-grooves"></div>
+                            <div class="vinyl-label">
+                                <span class="vinyl-heart">💕</span>
+                            </div>
+                            <div class="vinyl-shine"></div>
+                        </div>
+                    </div>
+                    <div class="player-info">
+                        <h3 class="song-title">Как будто мы с тобой</h3>
+                        <p class="song-artist">Ирина Круг & Алексей Брянцев</p>
+                    </div>
+                    <div class="player-controls">
+                        <button class="control-btn" id="playBtn" aria-label="Воспроизвести">
+                            <svg class="play-icon" viewBox="0 0 24 24" id="playIcon">
+                                <path d="M8 5v14l11-7z" fill="currentColor" />
+                            </svg>
+                            <svg class="pause-icon hidden" viewBox="0 0 24 24" id="pauseIcon">
+                                <rect x="6" y="4" width="4" height="16" fill="currentColor" />
+                                <rect x="14" y="4" width="4" height="16" fill="currentColor" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar">
+                            <div class="progress-fill" id="progressFill"></div>
+                            <div class="progress-handle" id="progressHandle"></div>
+                        </div>
+                        <div class="time-display">
+                            <span id="currentTime">0:00</span>
+                            <span id="duration">0:00</span>
+                        </div>
+                    </div>
+                    <div class="visualizer" id="visualizer">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Кнопка "Ещё раз" -->
+            <button class="replay-btn" id="replayBtn">
+                <span>🔄</span> Начать сначала
+            </button>
+        </section>
+    </main>
+
+    <!-- Аудио элемент -->
+    <audio id="audioPlayer" preload="auto">
+        <source src="Irina_Krug_Aleksejj_Bryancev_Kak_budto_my_s_tobojj_48115865.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
