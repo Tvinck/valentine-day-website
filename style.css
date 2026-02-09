@@ -1092,6 +1092,28 @@ body {
         height: 220px;
     }
 
+    .envelope-flap {
+        height: 100px;
+    }
+
+    .letter {
+        padding: 1.2rem;
+        top: 5%;
+    }
+
+    .letter-greeting {
+        font-size: 1.5rem;
+    }
+
+    .letter-text {
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .letter-signature {
+        font-size: 1.2rem;
+    }
+
     .player {
         min-width: 290px;
         padding: 1.8rem;
@@ -1106,11 +1128,46 @@ body {
         width: 75px;
         height: 75px;
     }
+
+    .message-screen {
+        padding: 1rem;
+        padding-top: 2rem;
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
     .main-content {
         padding: 1rem;
+        padding-top: 1.5rem;
+        justify-content: flex-start;
+        min-height: auto;
+    }
+
+    .welcome-screen {
+        padding-top: 1rem;
+    }
+
+    .date-badge {
+        padding: 0.8rem 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .date-number {
+        font-size: 2.2rem;
+    }
+
+    .date-month {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .main-title {
+        margin-bottom: 1rem;
+    }
+
+    .title-line {
+        font-size: 1.8rem;
     }
 
     .title-line.accent {
@@ -1118,25 +1175,196 @@ body {
     }
 
     .names-container {
-        gap: 0.8rem;
+        gap: 0.6rem;
+        margin-bottom: 1rem;
     }
 
     .name {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .heart-icon {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     .fortune-cookie-3d {
-        width: 130px;
-        height: 90px;
+        width: 120px;
+        height: 80px;
     }
 
     .cookie-half {
-        width: 65px;
-        height: 65px;
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Экран сообщения на мобильном */
+    .message-screen {
+        padding: 0.8rem;
+        padding-top: 1rem;
+        gap: 1rem;
+        overflow-y: auto;
+        max-height: 100vh;
+    }
+
+    .envelope-container {
+        margin-bottom: 0.5rem;
+        transform: scale(0.85);
+    }
+
+    .envelope {
+        width: 320px;
+        height: 280px;
+    }
+
+    .envelope-flap {
+        height: 90px;
+    }
+
+    .letter {
+        padding: 1rem;
+        top: 3%;
+        width: 94%;
+        left: 3%;
+    }
+
+    .letter-decoration {
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .letter-greeting {
+        font-size: 1.3rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .letter-content {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    .letter-text {
+        font-size: 0.8rem;
+        margin-bottom: 0.6rem;
+        text-align: left;
+    }
+
+    .letter-signature {
+        font-size: 1.1rem;
+        margin-top: 0.8rem;
+    }
+
+    @keyframes letterRise {
+        to {
+            opacity: 1;
+            transform: translateY(-20px);
+        }
+    }
+
+    .player-container {
+        transform: scale(0.9);
+    }
+
+    .player {
+        min-width: 280px;
+        padding: 1.2rem;
+        border-radius: 25px;
+        gap: 1rem;
+    }
+
+    .vinyl-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .vinyl-label {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+
+    .song-title {
+        font-size: 1.1rem;
+    }
+
+    .song-artist {
+        font-size: 0.85rem;
+    }
+
+    .control-btn {
+        width: 60px;
+        height: 60px;
+    }
+
+    .control-btn svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .visualizer {
+        height: 35px;
+    }
+
+    .visualizer .bar {
+        width: 5px;
+    }
+
+    .replay-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 380px) {
+    .title-line.accent {
+        font-size: 1.9rem;
+    }
+
+    .name {
+        font-size: 1.4rem;
+    }
+
+    .envelope-container {
+        transform: scale(0.75);
+    }
+
+    .player-container {
+        transform: scale(0.85);
+    }
+
+    .message-screen {
+        gap: 0.5rem;
+    }
+}
+
+/* Ландшафтная ориентация на мобильных */
+@media (max-height: 500px) and (orientation: landscape) {
+    .main-content {
+        padding: 0.5rem;
+    }
+
+    .welcome-screen {
+        transform: scale(0.8);
+    }
+
+    .message-screen {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .envelope-container {
+        transform: scale(0.6);
+    }
+
+    .player-container {
+        transform: scale(0.7);
     }
 }
